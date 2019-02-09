@@ -58,4 +58,4 @@ function parse(program) {
     return expr;
 }
 
-console.log(parse("+(a, 10)"));
+console.log(parse("+(a, 10)"), ":Final Result");
