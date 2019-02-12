@@ -26,3 +26,7 @@ var character = "Lyanna";
 family[character] = characterObject;
 console.log(family);
 
+// read find character
+var character = " Risyandi White";
+var result = family[character];
+console.log(result);
