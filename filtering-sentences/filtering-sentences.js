@@ -1,4 +1,4 @@
-var sentence = 'dasar kau cebong dan kau kampret asem',
+var sentence = 'Hai kamu dasar cebong dan juga sama saja dasar kau kampret',
     common = 'cebong, kampret';
 
 function getUncommon(sentence, common) {
