@@ -38,11 +38,11 @@ var result = family[character];
 var character = "John Mayer";
 family[character].house = "Turki"
 var result = family[character];
-console.log(result);
+    console.log(result);
 
 
 // Delete
 var character = "John Mayer";
 delete family[character];
-console.log(family);
+    console.log(family);
 
