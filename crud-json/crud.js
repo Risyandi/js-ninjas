@@ -16,7 +16,7 @@ var family = {
     },
 }
 
-// create add character
+// Create
 var characterObject = {
     "name": "Bella Ramsey",
     "gender": "Female",
@@ -24,9 +24,25 @@ var characterObject = {
 }
 var character = "Lyanna";
 family[character] = characterObject;
-console.log(family);
+    console.log(family);
 
-// read find character
+// Read 
 var character = " Risyandi White";
 var result = family[character];
+    console.log(result);
+    console.log(result.name);
+    console.log(result.gender);
+    console.log(result.house);
+
+// Update
+var character = "John Mayer";
+family[character].house = "Turki"
+var result = family[character];
 console.log(result);
+
+
+// Delete
+var character = "John Mayer";
+delete family[character];
+console.log(family);
+
