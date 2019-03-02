@@ -1,3 +1,4 @@
+// data schema json
 var family = {
     "Risyandi": {
         "name": "Risyandi white",
@@ -16,7 +17,7 @@ var family = {
     },
 }
 
-// Create
+// Create 
 var characterObject = {
     "name": "Bella Ramsey",
     "gender": "Female",
