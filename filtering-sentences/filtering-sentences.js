@@ -1,20 +1,20 @@
-var sentence = 'Hai kamu dasar cebong dan juga sama saja dasar kau kampret',
-    common = 'cebong, kampret';
+var sentence = "Hai kamu dasar cebong dan juga sama saja dasar kau kampret",
+    common = "cebong, kampret";
 
 function getUncommon(sentence, common) {
     var wordArr = sentence.match(/\w+/g),
         commonObj = {},
         uncommonArr = [],
         word, i;
-    
+
     common = common.split(',');
-    for ( i = 0; i < common.length; i++ ) {
-        commonObj[ common[i].trim() ] = true;
+    for (i = 0; i < common.length; i++) {
+        commonObj[common[i].trim()] = true;
     }
-    
-    for ( i = 0; i < wordArr.length; i++ ) {
+
+    for (i = 0; i < wordArr.length; i++) {
         word = wordArr[i].trim().toLowerCase();
-        if ( !commonObj[word] ) {
+        if (!commonObj[word]) {
             uncommonArr.push(word);
         }
     }
@@ -24,5 +24,6 @@ function getUncommon(sentence, common) {
     return uncommonArr;
 }
 
+console.log(getUncommon(sentence, common), "value of sentences");
 // document.write( getUncommon(sentence, common) );
 getUncommon(sentence, common);
