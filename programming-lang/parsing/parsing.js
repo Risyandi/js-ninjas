@@ -51,11 +51,11 @@ function parseApply(expr, program) {
 
 // function parse
 function parse(program) {
-    let {expr, rest} = parserExpression(program);
+    let { expr, rest } = parserExpression(program);
     if (skipSpace(rest).length > 0) {
         throw new SyntaxError("Unexpected text after program");
     }
     return expr;
 }
 
-console.log(parse("+(a, 10)"), ":Final Result");
+console.log(parse("+(a, 10)"));
