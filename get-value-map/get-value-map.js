@@ -1,3 +1,4 @@
+/* define object */
 var myObject = {
     "8": [{
         "temp": {
@@ -18,7 +19,7 @@ var myObject = {
     }
 };
 var getElm = document.querySelector('.valueMap');
-
+/* function search */
 function search() {
     for (var object in myObject) {
         console.log(object, ":value of object");
