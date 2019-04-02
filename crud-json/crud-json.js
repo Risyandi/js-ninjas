@@ -6,12 +6,12 @@ var family = {
         "house": "jatinangor"
     },
     "Angela": {
-        "name": "angela white",
+        "name": "angelica white",
         "gender": "female",
         "house": "india"
     },
     "Mariska": {
-        "name": "mariska white",
+        "name": "mariska green",
         "gender": "female",
         "house": "australia"
     },
