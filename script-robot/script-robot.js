@@ -9,6 +9,7 @@ const roads = [
     "Marketplace-Town Hall", "Shop-Town Hall"
 ];
 
+
 // function for build graphs 
 function buildGraph(edges) {
     let graph = Object.create(null);
@@ -105,6 +106,7 @@ function runRobot(state, robot, memory) {
         console.log(state, ":value of state");
         memory = action.memory;
         console.log(memory, ":value of memory");
+        console.table(roads, "table");
         console.log(`moved to ${action.direction}`);
     }
 }
