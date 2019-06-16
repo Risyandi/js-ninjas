@@ -55,15 +55,16 @@ audioSelect.onchange = getStream;
 videoSelect.onchange = getStream;
 
 function gotDevices(deviceInfos) {
-    for (let index = 0; index !== deviceInfos.length; index++) {
-        const deviceInfo = deviceInfos[index];
-        const option = document.createElement('option');
+    for (let index = 0; index !== deviceInfos.length; ++index) {
+        let deviceInfo = deviceInfos[index];
+        let option = document.createElement('option');
         option.value = deviceInfo.deviceId;
         if (deviceInfo.kind === 'audioinput') {
             option.text = deviceInfo.label || 'microphone' + (audioSelect.length + 1);
             audioSelect.appendChild(option);
         } else if (deviceInfo.kind === 'videoinput') {
             option.text = deviceInfo.label || 'camera' + (videoSelect.length + 1);
+            videoSelect.appendChild(option);
         } else {
             console.log('found another kind of device', deviceInfo);
         }
@@ -76,15 +77,14 @@ function getStream() {
             track.stop();
         });
     }
+
+    const constraints = {
+        audio: { deviceId: { exact: audioSelect.value } },
+        video: { deviceId: { exact: videoSelect.value } }
+    };
+
+    navigator.mediaDevices.getUserMedia(constraints).then(gotStream).catch(handleError);
 }
-
-const constraints = {
-    audio: { deviceId: { exact: audioSelect.value } },
-    video: { deviceId: { exact: videoSelect.value } }
-}
-
-navigator.mediaDevices.getUserMedia(constraints).then(gotStream).catch(handleError);
-
 function gotStream(stream) {
     window.stream = stream; // make stream available to console
     videoElement.srcObject = stream;
