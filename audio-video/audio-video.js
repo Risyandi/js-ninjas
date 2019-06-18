@@ -43,6 +43,8 @@
 
 /**
  * #2 eksperimen select audio dan video
+ * pada eksperimen ke dua ini, kita akan mempunyai dua selector yang berisi 2 pilihan yaitu audio dan video. didalam selector tersebut berisi 
+ * device apa saja yang terdeteksi oleh API's baik itu devices audio atau video.
  */
 
 const videoElement = document.querySelector('.videoPlay');
