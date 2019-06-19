@@ -1,5 +1,21 @@
 video {
     background: #222;
     margin: 0 0 20px 0;
-    width: 50%;
+    width: 100%;
+}
+
+.main-wrapper {
+    margin: auto;
+    width: 728px;
+    text-align: center;
+}
+.select, .select label {
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 15px;
+    font-family: Arial, 'Helvetica', sans-serif;
+    font-weight: bold;
+}
+.select select {
+    width: 100%;
 }
