@@ -100,5 +100,25 @@ function handleError(error) {
  * #3 eskperimen ambil screenshot
  * canvas dan API's ctx.drawImage(video, 0, 0) metode yang akan membuat gambar <video> menjadi bingkai di <canvas>. 
  */
+const captureVideoButton = document.querySelector('');
+const screenShotButton = document.querySelector('');
+const img = document.querySelector('');
+const video = document.querySelector('');
+const canvas = document.createElement('canvas');
 
- 
+captureVideoButton.onclick = function() {
+    navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
+};
+
+screenShotButton.onclick = video.onclick = function() {
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext('2d').drawImage(video, 0, 0);
+
+    img.src = canvas.toDataURL('images/webp');
+};
+
+function handleSucess(stream) {
+    screenShotButton.disabled = false;
+    video.srcObject = stream;
+}
