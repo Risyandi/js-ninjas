@@ -95,3 +95,10 @@ function gotStream(stream) {
 function handleError(error) {
     console.log('Error: ', error);
 }
+
+/**
+ * #3 eskperimen ambil screenshot
+ * canvas dan API's ctx.drawImage(video, 0, 0) metode yang akan membuat gambar <video> menjadi bingkai di <canvas>. 
+ */
+
+ 
