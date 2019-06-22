@@ -5,29 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- custom css -->
     <link rel="stylesheet" href="audio-video-styles.css">
+    <!-- library: bulma css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css.map">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <title>JS Ninjas - Audio and Video</title>
 </head>
 
 <body>
-    <div class="main-wrapper">
-        <!-- eksperimen video #1 -->
-        <video autoplay class="videoPlay"></video>
-        <!-- eksperimen video #2 -->
-        <div class="select">
-            <label for="audioSource">Audio source: </label><select id="audioSource"></select>
+    <section class="section">
+        <div class="main-wrapper">
+            <div class="main-logo">
+                <i class="fas fa-smile fa-10x"></i>
+            </div>
+            <h1 class="title">HTML5 AUDIO VIDEO</h1>
+            <div>
+                <a class="button is-success is-rounded" href="detect-device.html" target="_blank">Eksperimen 1</a>
+                <a class="button is-success is-rounded" href="video-audio-source.html" target="_blank">Eksperimen 2</a>
+                <a class="button is-success is-rounded" href="video-screenshot.html" target="_blank">Eksperimen 3</a>
+            </div>
         </div>
-        <div class="select">
-            <label for="videoSource">Video source: </label><select id="videoSource"></select>
-        </div>
-        <!-- eksperimen video screenshot #3 -->
-        <video autoplay class="videoScreenshot"></video>
-        <img src="" alt="image-screenshot">
-        <canvas style="display: none;"></canvas>
-        <button id="capture-button">Capture Video</button>
-        <button id="screenshot">Screenshot</button>
-    </div>
+    </section>
 </body>
+<!-- library: fontawesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<!-- custom js -->
 <script src="audio-video.js"></script>
 
 </html>
