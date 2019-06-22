@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- custom css -->
+    <link rel="stylesheet" href="../audioVideoStyles.css">
+    <!-- library: bulma css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css.map">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <title>JS Ninjas - Audio and Video | video audio source</title>
+</head>
+
+<body>
+    <section class="section">
+        <div class="main-wrapper">
+            <!-- eksperimen video #2 -->
+            <video autoplay class="videoPlay"></video>
+            <!-- dropdown audio source -->
+            <div id="dropdown" class="dropdown">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <span>Audio Source</span>
+                        <span class="icon is-small">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                    <div class="dropdown-content" id="content-audio">
+                        <!-- <a href="#" class="dropdown-item">
+                        Overview
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Modifiers
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Grid
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Form
+                    </a> -->
+                    </div>
+                </div>
+            </div>
+            <!-- dropdown video source -->
+            <div id="dropdown" class="dropdown">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <span>Video Source</span>
+                        <span class="icon is-small">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                    <div class="dropdown-content" id="content-video">
+                        <!-- <a href="#" class="dropdown-item">
+                        Overview
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Modifiers
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Grid
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Form
+                    </a> -->
+                    </div>
+                </div>
+            </div>
+
+    </section>
+</body>
+<!-- library: fontawesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<!-- custom js -->
+<script src="videoAudioSource.js"></script>
+
+</html>

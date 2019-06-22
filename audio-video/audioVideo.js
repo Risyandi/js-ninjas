@@ -128,10 +128,28 @@
  * utility
  */
 
-const isActiveDropdown = () => {
-    let elmDropdown = document.getElementById("dropdown");
-    elmDropdown.classList.add("is-active");
-    console.log("active");
+// function get all selector
+function getAll(selector) {
+    return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
 }
 
-document.querySelector("div.dropdown").onclick = isActiveDropdown;
+// dropdown
+let $dropdown = getAll('.dropdown');
+if ($dropdown.length > 0) {
+    $dropdown.forEach( $el => {
+        $el.addEventListener('click', event => {
+            event.stopPropagation();
+            $el.classList.toggle('is-active');
+        });
+    });
+
+    document.addEventListener('click', event => {
+        closeDropdown();
+    });
+}
+
+closeDropdown = () => {
+    $dropdown.forEach( $el => {
+        $el.classList.remove('is-active');
+    });
+}
