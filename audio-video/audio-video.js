@@ -47,78 +47,91 @@
  * device apa saja yang terdeteksi oleh API's baik itu devices audio atau video.
  */
 
-const videoElement = document.querySelector('.videoPlay');
-const audioSelect = document.querySelector('select#audioSource');
-const videoSelect = document.querySelector('select#videoSource');
+// const videoElement = document.querySelector('.videoPlay');
+// const audioSelect = document.querySelector('select#audioSource');
+// const videoSelect = document.querySelector('select#videoSource');
 
-navigator.mediaDevices.enumerateDevices().then(gotDevices).then(getStream).catch(handleError);
+// navigator.mediaDevices.enumerateDevices().then(gotDevices).then(getStream).catch(handleError);
 
-audioSelect.onchange = getStream;
-videoSelect.onchange = getStream;
+// audioSelect.onchange = getStream;
+// videoSelect.onchange = getStream;
 
-function gotDevices(deviceInfos) {
-    for (let index = 0; index !== deviceInfos.length; ++index) {
-        let deviceInfo = deviceInfos[index];
-        let option = document.createElement('option');
-        option.value = deviceInfo.deviceId;
-        if (deviceInfo.kind === 'audioinput') {
-            option.text = deviceInfo.label || 'microphone' + (audioSelect.length + 1);
-            audioSelect.appendChild(option);
-        } else if (deviceInfo.kind === 'videoinput') {
-            option.text = deviceInfo.label || 'camera' + (videoSelect.length + 1);
-            videoSelect.appendChild(option);
-        } else {
-            console.log('found another kind of device', deviceInfo);
-        }
-    }
-}
+// function gotDevices(deviceInfos) {
+//     for (let index = 0; index !== deviceInfos.length; ++index) {
+//         let deviceInfo = deviceInfos[index];
+//         let option = document.createElement('option');
+//         option.value = deviceInfo.deviceId;
+//         if (deviceInfo.kind === 'audioinput') {
+//             option.text = deviceInfo.label || 'microphone' + (audioSelect.length + 1);
+//             audioSelect.appendChild(option);
+//         } else if (deviceInfo.kind === 'videoinput') {
+//             option.text = deviceInfo.label || 'camera' + (videoSelect.length + 1);
+//             videoSelect.appendChild(option);
+//         } else {
+//             console.log('found another kind of device', deviceInfo);
+//         }
+//     }
+// }
 
-function getStream() {
-    if (window.stream) {
-        window.stream.getTracks().forEach(function (track) {
-            track.stop();
-        });
-    }
+// function getStream() {
+//     if (window.stream) {
+//         window.stream.getTracks().forEach(function (track) {
+//             track.stop();
+//         });
+//     }
 
-    const constraints = {
-        audio: { deviceId: { exact: audioSelect.value } },
-        video: { deviceId: { exact: videoSelect.value } }
-    };
+//     const constraints = {
+//         audio: { deviceId: { exact: audioSelect.value } },
+//         video: { deviceId: { exact: videoSelect.value } }
+//     };
 
-    navigator.mediaDevices.getUserMedia(constraints).then(gotStream).catch(handleError);
-}
-function gotStream(stream) {
-    window.stream = stream; // make stream available to console
-    videoElement.srcObject = stream;
-}
+//     navigator.mediaDevices.getUserMedia(constraints).then(gotStream).catch(handleError);
+// }
+// function gotStream(stream) {
+//     window.stream = stream; // make stream available to console
+//     videoElement.srcObject = stream;
+// }
 
-function handleError(error) {
-    console.log('Error: ', error);
-}
+// function handleError(error) {
+//     console.log('Error: ', error);
+// }
 
 /**
  * #3 eskperimen ambil screenshot
  * canvas dan API's ctx.drawImage(video, 0, 0) metode yang akan membuat gambar <video> menjadi bingkai di <canvas>. 
  */
-const captureVideoButton = document.querySelector('');
-const screenShotButton = document.querySelector('');
-const img = document.querySelector('');
-const video = document.querySelector('');
-const canvas = document.createElement('canvas');
+// const captureVideoButton = document.querySelector('');
+// const screenShotButton = document.querySelector('');
+// const img = document.querySelector('');
+// const video = document.querySelector('');
+// const canvas = document.createElement('canvas');
 
-captureVideoButton.onclick = function() {
-    navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
-};
+// captureVideoButton.onclick = function () {
+//     navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
+// };
 
-screenShotButton.onclick = video.onclick = function() {
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    canvas.getContext('2d').drawImage(video, 0, 0);
+// screenShotButton.onclick = video.onclick = function () {
+//     canvas.width = video.videoWidth;
+//     canvas.height = video.videoHeight;
+//     canvas.getContext('2d').drawImage(video, 0, 0);
 
-    img.src = canvas.toDataURL('images/webp');
-};
+//     img.src = canvas.toDataURL('images/webp');
+// };
 
-function handleSucess(stream) {
-    screenShotButton.disabled = false;
-    video.srcObject = stream;
+// function handleSucess(stream) {
+//     screenShotButton.disabled = false;
+//     video.srcObject = stream;
+// }
+
+
+/**
+ * utility
+ */
+
+const isActiveDropdown = () => {
+    let elmDropdown = document.getElementById("dropdown");
+    elmDropdown.classList.add("is-active");
+    console.log("active");
 }
+
+document.querySelector("div.dropdown").onclick = isActiveDropdown;
