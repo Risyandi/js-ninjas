@@ -6,13 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>API's File Reader | Risyandi</title>
+    <style>
+        h1 {
+            font-style: normal;
+            font-family: Arial, 'Helvetica', sans-serif;
+            font-size: 22px;
+        }
+
+        .main-wrapper {
+            margin: auto;
+            text-align: center;
+        }
+
+        .images-reader {
+            border: 1px solid black;
+            width: 30%;
+            margin: auto;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-repeat: no-repeat;
+            background: url(./background.JPG);
+            background-size: 100%;
+        }
+
+        .images-reader p {
+            bottom: 18px;
+            font-style: normal;
+            font-family: Arial, 'Helvetica', sans-serif;
+            font-size: 14px;
+            margin: 0;
+            position: relative;
+            background-color: #eeeeee;
+            width: fit-content;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        #response-error {
+            font-style: normal;
+            font-family: Arial, 'Helvetica', sans-serif;
+            font-size: 14px;
+            color: red;
+        }
+
+        #output-images {
+            margin-top: 10px;
+            width: 30%;
+        }
+    </style>
 </head>
 
 <body>
-    <div>
-        <input type='file' accept='image/*' onchange='openFile(event)'><br>
-        <img id='output'>
+    <div class="main-wrapper">
+        <h1> Research File Reader </h1>
+        <!-- uploading image with file reader using constructor -->
+        <div class="images-reader">
+            <p>File reader constructor</p>
+            <input type='file' accept='image/*' onchange='openFile(event)'><br>
+            <img id='output-images'>
+        </div>
+
+        <!-- uploading instance properties -->
+        <div class="images-reader">
+            <p>File reader instance properties error</p>
+            <input type='file' accept='image/*' onchange='openFileError(event)'><br>
+            <div id="response-error"></div>
+        </div>
     </div>
 </body>
 <script src="file-reader.js"></script>
+
 </html>
