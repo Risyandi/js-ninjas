@@ -49,3 +49,29 @@ var openFileError = function (event) {
     /** read file data as url */
     reader.readAsDataURL(input.files[0]);
 }
+
+
+/**
+ * instance properties
+ * the current state of the reader, 
+ */
+
+var stateNames = {};
+var resState = document.getElementById('response-state');
+stateNames[FileReader.EMPTY] = 'EMPTY';
+stateNames[FileReader.DONE] = 'DONE';
+stateNames[FileReader.LOADING] = 'LOADING';
+var openFileReadyState = function (event) {
+    var input = event.target;
+    var reader = new FileReader();
+    reader.onload = function () {
+        console.log('after load:' + stateNames[reader.readyState]);
+        resState.innerText = 'after load:' + stateNames[reader.readyState];
+    }
+    
+    console.log('Before Read:' + stateNames[reader.readyState]);
+    resState.innerText = 'Before Read:' + stateNames[reader.readyState];
+    reader.readAsDataURL(input.files[0]);
+    console.log('After Read:' + stateNames[reader.readyState]);
+    resState.innerText = 'after Read:' + stateNames[reader.readyState];
+}
