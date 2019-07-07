@@ -72,6 +72,13 @@
             <input type='file' accept='image/*' onchange='openFileError(event)'><br>
             <div id="response-error"></div>
         </div>
+
+        <!-- uploading instance properties readyState -->
+        <div class="images-reader">
+            <p>File reader instance properties readyState</p>
+            <input type='file' onchange='openFileReadyState(event)'><br>
+            <div id="response-state"></div>
+        </div>
     </div>
 </body>
 <script src="file-reader.js"></script>
