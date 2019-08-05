@@ -1,0 +1,47 @@
+/**
+ * declares class
+ */
+class classAndConstruct {
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+
+    // getter
+    get areaCalculate() {
+        return this.calculate();
+    }
+
+    // method
+    calculate() {
+        return this.height * this.width;
+    }
+}
+
+const result = new classAndConstruct(10, 10);
+console.log(result.areaCalculate); // output : 100
+
+/**
+ * expression class
+ */
+let calculateNamed = class calculateNamed2 {
+    constructor(total, height, width) {
+        this._total = total;
+        this._height = height;
+        this._width = width;
+    }
+}
+console.log(calculateNamed.name, "expr class named"); // output : calculateNamed2
+
+
+let calculateUnNamed = class {
+    constructor(total, height, width) {
+        this._total = total;
+        this._height = height;
+        this._width = width;
+    }
+}
+console.log(calculateUnNamed.name, "expr class unnamed"); // output : calculateNamed    
+
+
+export default classAndConstruct;
