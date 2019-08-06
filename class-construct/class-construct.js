@@ -53,13 +53,15 @@ class Point {
         this._height = height;
         this._width = width;
     }
-    
+
     static distance(a, b) {
-        return (a+b)*a;
+        return (a + b) * a;
     }
 }
 console.log(Point.distance(50, 10));
 
 
-// export class with default name
-export default classAndConstruct;
+/**
+ * export class with default name using when this class will be using on another class.
+ */
+// export default classAndConstruct;
