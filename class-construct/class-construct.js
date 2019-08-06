@@ -44,4 +44,22 @@ let calculateUnNamed = class {
 console.log(calculateUnNamed.name, "expr class unnamed"); // output : calculateNamed    
 
 
+/**
+ * static method
+ */
+
+class Point {
+    constructor(height, width) {
+        this._height = height;
+        this._width = width;
+    }
+    
+    static distance(a, b) {
+        return (a+b)*a;
+    }
+}
+console.log(Point.distance(50, 10));
+
+
+// export class with default name
 export default classAndConstruct;
