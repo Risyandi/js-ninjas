@@ -65,3 +65,20 @@ console.log(Point.distance(50, 10));
  * export class with default name using when this class will be using on another class.
  */
 // export default classAndConstruct;
+
+
+/**
+ * method bind(), bind create new function that will have this set to the first parameter passed to bind().
+ */
+let sample = function (content) {
+    this.content = content;
+}
+sample.prototype.click = function () {
+    console.log();
+}
+let mySample = new sample('OK');
+mySample.click();
+let mySampleII = mySample.click();
+mySampleII();
+let mySampleIII = mySample.click.bind(mySample);
+mySampleIII();
