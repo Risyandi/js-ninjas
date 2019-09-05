@@ -7,7 +7,7 @@ class classAndConstruct {
         this.width = width;
     }
 
-    // getter
+    // getter value from calculate
     get areaCalculate() {
         return this.calculate();
     }
